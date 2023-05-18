@@ -11,7 +11,7 @@ pipeline {
     stage('Build') {
       steps {
         dir('video-streaming/') {
-          sh 'docker build -t gcr.io/${env.IMAGE_REPOSITORY}/${env.SERVICE_NAME}:${env.APP_VERSION} .'
+          sh "docker build -t gcr.io/${env.IMAGE_REPOSITORY}/${env.SERVICE_NAME}:${env.APP_VERSION} ."
         }
       }
     } 
