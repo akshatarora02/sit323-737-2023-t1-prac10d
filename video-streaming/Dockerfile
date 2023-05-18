@@ -2,8 +2,8 @@ FROM node:10.15.2-alpine
 
 WORKDIR /usr/src/app
 COPY package*.json ./
+RUN npm install
+COPY ./src ./src
+COPY ./videos ./videos
 
-CMD npm config set cache-min 9999999 && \
-    npm install && \
-    npm run start:dev
-    
+CMD npm start
