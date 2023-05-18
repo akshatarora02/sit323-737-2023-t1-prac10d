@@ -11,7 +11,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        docker build -t gcr.io/${env.IMAGE_REPOSITORY}/${env.SERVICE_NAME}:${APP_VERSION} .
+        sh 'docker build -t gcr.io/${env.IMAGE_REPOSITORY}/${env.SERVICE_NAME}:${APP_VERSION} .'
       }
     }
     
@@ -24,7 +24,7 @@ pipeline {
     
     stage('Pushing image') {
       steps {
-        docker push gcr.io/${env.IMAGE_REPOSITORY}/${env.SERVICE_NAME}:${APP_VERSION}
+        sh 'docker push gcr.io/${env.IMAGE_REPOSITORY}/${env.SERVICE_NAME}:${APP_VERSION}'
       }
     }
   }
