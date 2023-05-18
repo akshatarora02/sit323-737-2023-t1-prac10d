@@ -5,7 +5,7 @@ pipeline {
 
     IMAGE_REPOSITORY = "sit737-23t1-arora-5acc5a5"
     SERVICE_NAME = "video-streaming"
-    APP_VERSION = "${currentBuild.startTimeInMillis}
+    APP_VERSION = "${currentBuild.startTimeInMillis}"
   }
   
   stages {
