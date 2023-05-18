@@ -17,7 +17,8 @@ pipeline {
     stage('Test') {
       steps {
         echo "Running tests"
-        sh "npm test"
+        sh "docker run --rm gcr.io/${env.IMAGE_REPOSITORY}/${env.SERVICE_NAME}:${env.APP_VERSION} npm test"
+
       }
     }
     
