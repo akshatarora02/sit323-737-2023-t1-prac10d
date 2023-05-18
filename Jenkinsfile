@@ -10,7 +10,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh "cd ./video-streaming"
+        sh "cd video-streaming/"
         sh "ls"
         sh "docker build -t gcr.io/${env.IMAGE_REPOSITORY}/${env.SERVICE_NAME}:${env.APP_VERSION} ."
       }
