@@ -31,7 +31,7 @@ pipeline {
       steps {
           script {
             def filePath = 'var/lin/jenkins/dockerversion.txt'
-            def content = "${env.APP_VERSION}"
+            def content = "Hello"
           
             if (!fileExists(filePath)) {
               writeFile file: filePath, text: content
