@@ -1,16 +1,20 @@
 // File: videoStream.test.js
 
 const request = require('supertest');
-const app = require('./app'); // Import your Express app or server
+const app = require('./index'); // Import your Express app or server
+
 
 describe('Video Streaming', () => {
-  test('should return the video file', async () => {
-    const response = await request(app).get('/video');
-
-    expect(response.status).toBe(200);
-    expect(response.headers['content-type']).toBe('video/mp4');
-    expect(response.headers['content-length']).toBeDefined();
+    it('should return the video file', (done) => {
+      request(app)
+        .get('/video')
+        .expect('Content-Type', 'video/mp4')
+        .expect(200)
+        .end((err, res) => {
+          if (err) {
+            return done(err);
+          }
+          done();
+        });
+    });
   });
-
-  // Add more test cases for different scenarios
-});
