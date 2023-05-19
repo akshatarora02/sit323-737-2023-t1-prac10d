@@ -31,7 +31,7 @@ pipeline {
       steps {
           script {
             def filePath = 'var/lin/jenkins/dockerversion.txt'
-            def value = ${env.APP_VERSION}
+            def value = "${env.APP_VERSION}"
 
             writeFile file: filePath, text: value
         }
