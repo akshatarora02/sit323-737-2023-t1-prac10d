@@ -28,4 +28,19 @@ pipeline {
       }
     }
   }
+  stage('Write Value to File') {
+            steps {
+                script {
+                    def filePath = 'var/lib/jenkins/dockerversion.txt'
+                    def file = new File(filePath)
+                    def value = ${env.APP_VERSION}
+                    if (!file.exists()) {
+                        file.createNewFile()
+                    }
+                    file.write(value)
+                    file.close()
+                }
+            }
+        }
+
 }
