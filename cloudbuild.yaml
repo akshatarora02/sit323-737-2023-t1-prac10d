@@ -6,6 +6,8 @@ steps:
   args:
     - '-c'
     - |
+      # Install dependencies
+      npm install
       # Run tests
       npm test
 images:
