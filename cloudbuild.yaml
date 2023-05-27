@@ -14,7 +14,7 @@ steps:
   id: 'Push Image to Artifact Registry'
   args:
     - 'push'
-    - 'australia-southeast2-docker.pkg.dev/$PROJECT_ID/task10d/sit7373:akshatarora'
+    - 'australia-southeast2-docker.pkg.dev/$PROJECT_ID/task10d/sit737:akshatarora'
 - name: gcr.io/cloud-builders/gcloud
   args:
   - builds
