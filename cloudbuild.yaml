@@ -20,4 +20,4 @@ steps:
   - builds
   - triggers
   - run
-  - --trigger-id=cdtrigger
+  - cdtrigger
