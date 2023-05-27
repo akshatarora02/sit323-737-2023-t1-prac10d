@@ -18,6 +18,6 @@ steps:
 - name: gcr.io/cloud-builders/gcloud
   args:
   - builds
-  - trigger
+  - triggers
   - run
   - --trigger-id=cdtrigger
