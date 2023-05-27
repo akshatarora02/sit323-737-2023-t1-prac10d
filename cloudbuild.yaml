@@ -21,3 +21,4 @@ steps:
   - triggers
   - run
   - cdtrigger
+  - --branch=main
