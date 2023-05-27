@@ -1,13 +1,6 @@
 steps:
-
 - name: 'gcr.io/cloud-builders/docker'
-  id: 'Build and Push Image'
-  args:
-    - 'build'
-    - '-t'
-    - 'australia-southeast2-docker.pkg.dev/$PROJECT_ID/task10d/sit7373:akshatarora'
-    - '.'
-    - '--push'
+  args: [ 'build', '-t', 'australia-southeast2-docker.pkg.dev/$PROJECT_ID/task10d/sit7373:akshatarora', '.' , '--push']
 - name: 'node:alpine'
   entrypoint: 'ash'
   args:
@@ -17,6 +10,11 @@ steps:
       npm install
       # Run tests
       npm test
+- name: 'gcr.io/cloud-builders/docker'
+  id: 'Push Image to Artifact Registry'
+  args:
+    - 'push'
+    - 'australia-southeast2-docker.pkg.dev/$PROJECT_ID/task10d/sit7373:akshatarora'
 - name: gcr.io/cloud-builders/gcloud
   args:
   - builds
